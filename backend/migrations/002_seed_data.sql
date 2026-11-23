@@ -3,8 +3,8 @@ USE university_room_booking;
 -- Password untuk semua akun demo: password
 INSERT INTO users (id, name, email, password_hash, role, created_at) VALUES
 (1, 'Admin Kampus', 'admin@univ.ac.id', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'ADMIN', NOW()),
-(2, 'Naufal', 'naufal@student.univ.ac.id', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'USER', NOW()),
-(3, 'Farhan', 'farhan@student.univ.ac.id', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'USER', NOW());
+(2, 'Farhan', 'farhan@student.univ.ac.id', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'USER', NOW()),
+(3, 'Naufal', 'naufal@student.univ.ac.id', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'USER', NOW());
 
 INSERT INTO rooms (id, name, code, description, capacity, location, status, created_at, updated_at) VALUES
 (1, 'Aula Utama', 'AUL-01', 'Aula besar dilengkapi proyektor ganda, sound system, dan AC sentral.', 250, 'Gedung Rektorat Lantai 1', 'ACTIVE', NOW(), NOW()),
