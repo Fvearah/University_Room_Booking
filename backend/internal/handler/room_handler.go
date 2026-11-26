@@ -40,7 +40,7 @@ func (h *RoomHandler) Detail(c *gin.Context) {
 		return
 	}
 
-	room, err := h.svc.Detail(c.Request.Context(), id)
+	room, err := h.svc.Detail(c.Request.Context(), id, c.GetString("user_role"))
 	if err != nil {
 		if errors.Is(err, repository.ErrRoomNotFound) {
 			c.JSON(http.StatusNotFound, dto.ErrorResponse{
@@ -140,7 +140,7 @@ func (h *RoomHandler) Availability(c *gin.Context) {
 		return
 	}
 
-	res, err := h.svc.GetAvailability(c.Request.Context(), id, c.Query("date"))
+	res, err := h.svc.GetAvailability(c.Request.Context(), id, c.Query("date"), c.GetString("user_role"))
 	if err != nil {
 		switch {
 		case errors.Is(err, repository.ErrRoomNotFound):

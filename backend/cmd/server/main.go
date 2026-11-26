@@ -16,6 +16,10 @@ import (
 func main() {
 	_ = godotenv.Load()
 
+	if os.Getenv("JWT_SECRET") == "" {
+		log.Fatal("JWT_SECRET belum diisi di file .env")
+	}
+
 	db, err := config.InitDB()
 	if err != nil {
 		log.Fatalf("Gagal terhubung ke database MySQL: %v", err)

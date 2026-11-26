@@ -86,8 +86,9 @@ func (s *BookingService) List(ctx context.Context, userID uint64, role, dateFilt
 	filtered := make([]model.Booking, 0, len(items))
 	for _, b := range items {
 		b.Status = deriveDisplayStatus(b, now)
-		if statusFilter == "COMPLETED" && b.Status != "COMPLETED" {
+		if (statusFilter == "COMPLETED" || statusFilter == "CONFIRMED") && b.Status != statusFilter {
 			continue
+
 		}
 		filtered = append(filtered, b)
 	}
